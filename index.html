@@ -163,22 +163,28 @@
   <aside class="bg-brand-maroon text-white text-xs border-b border-brand-crimson/50 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-2">
       <div class="flex items-center space-x-1.5 sm:space-x-2 text-brand-goldPale text-[11px] sm:text-xs truncate">
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-brand-gold text-brand-dark uppercase tracking-wide">
+        <span data-i18n="estdBadge" class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-brand-gold text-brand-dark uppercase tracking-wide">
           Estd. 1991
         </span>
-        <span class="truncate font-medium">Chowk, Lucknow • Wholesale Cloth Materials</span>
+        <span data-i18n="topBarLocation" class="truncate font-medium">Chowk, Lucknow • Wholesale Cloth Materials</span>
       </div>
 
-      <div class="flex items-center space-x-3 text-xs flex-shrink-0">
+      <div class="flex items-center space-x-2 sm:space-x-3 text-xs flex-shrink-0">
+        <!-- Prominent Language Switcher Pill in Top Bar -->
+        <button onclick="toggleLanguage()" class="lang-btn-tooltip flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-brand-gold/25 hover:bg-brand-gold text-brand-goldPale hover:text-brand-dark border border-brand-gold/50 text-[11px] font-bold transition-all shadow-sm" title="Convert to Hindi / हिन्दी में देखें" aria-label="Convert to Hindi">
+          <i data-lucide="languages" class="w-3.5 h-3.5 text-brand-goldLight"></i>
+          <span class="lang-btn-text font-bold">हिन्दी</span>
+        </button>
+
         <a href="tel:+919839201666" class="flex items-center space-x-1 hover:text-brand-goldLight transition-colors font-medium">
           <i data-lucide="phone" class="w-3 h-3 text-brand-goldLight"></i>
           <span class="hidden xs:inline sm:inline">+91 9839201666</span>
-          <span class="xs:hidden sm:hidden">Call</span>
+          <span class="xs:hidden sm:hidden" data-i18n="callBtn">Call</span>
         </a>
         <span class="text-brand-crimson hidden sm:inline">|</span>
         <a href="https://wa.me/919839201666?text=Hello%20Kripa%20Fabric,%20I%20want%20to%20inquire%20about%20fabric%20wholesale%20stock%20and%20rates." target="_blank" rel="noopener" class="flex items-center space-x-1 hover:text-brand-goldLight transition-colors font-medium text-emerald-300">
           <i data-lucide="message-circle" class="w-3 h-3"></i>
-          <span>Rates</span>
+          <span data-i18n="ratesBtn">Rates</span>
         </a>
       </div>
     </div>
@@ -200,7 +206,7 @@
             <span class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-brand-maroon leading-none">
               KRIPA FABRIC
             </span>
-            <span class="text-[9px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase font-semibold text-brand-gold mt-0.5 sm:mt-1 truncate">
+            <span data-i18n="brandSub" class="text-[9px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase font-semibold text-brand-gold mt-0.5 sm:mt-1 truncate">
               Chowk, Lucknow • Estd. 1991
             </span>
           </div>
@@ -208,61 +214,87 @@
 
         <!-- Desktop Navigation Links -->
         <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-brand-charcoal">
-          <a href="#catalog" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Cloth Materials</a>
-          <a href="#chikankari" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Chikankari Base</a>
-          <a href="#gallery" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Shop Photos</a>
-          <a href="#quote-calculator" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Quote Calculator</a>
-          <a href="#why-us" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Why Us</a>
+          <a href="#catalog" data-i18n="navMaterials" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Cloth Materials</a>
+          <a href="#chikankari" data-i18n="navChikankari" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Chikankari Base</a>
+          <a href="#gallery" data-i18n="navPhotos" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Shop Photos</a>
+          <a href="#quote-calculator" data-i18n="navCalculator" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Quote Calculator</a>
+          <a href="#why-us" data-i18n="navWhyUs" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Why Us</a>
           <a href="#stock-rates" class="text-brand-maroon font-bold py-1 px-2.5 bg-brand-goldPale/70 rounded-lg border border-brand-gold/40 hover:bg-brand-goldPale transition-all flex items-center gap-1 shadow-sm">
             <i data-lucide="tag" class="w-3.5 h-3.5 text-brand-gold"></i>
-            <span>Stock / Maal Rates</span>
+            <span data-i18n="navRates">Stock / Maal Rates</span>
           </a>
-          <a href="#contact" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Store Visit</a>
+          <a href="#contact" data-i18n="navVisit" class="hover:text-brand-maroon transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold hover:after:w-full after:transition-all">Store Visit</a>
         </nav>
 
-        <!-- Header CTA Buttons -->
-        <div class="hidden sm:flex items-center gap-2.5">
-          <a href="#quote-calculator" class="px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-brand-maroon border border-brand-maroon/30 rounded-lg hover:bg-brand-maroon/5 transition-all">
+        <!-- Header CTA Buttons + Desktop Language Switcher -->
+        <div class="hidden sm:flex items-center gap-2 sm:gap-2.5">
+          <!-- Desktop Language Converter Button -->
+          <button onclick="toggleLanguage()" class="lang-btn-tooltip flex items-center gap-1.5 px-3 py-2 text-xs font-bold uppercase tracking-wider text-brand-maroon border border-brand-gold/60 bg-brand-goldPale/70 hover:bg-brand-gold hover:text-white rounded-lg shadow-sm transition-all" title="Convert to Hindi / हिन्दी में देखें" aria-label="Convert to Hindi">
+            <i data-lucide="languages" class="w-4 h-4 text-brand-gold"></i>
+            <span class="lang-btn-text">हिन्दी</span>
+          </button>
+
+          <a href="#quote-calculator" data-i18n="btnBulkQuote" class="px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-brand-maroon border border-brand-maroon/30 rounded-lg hover:bg-brand-maroon/5 transition-all">
             Bulk Quote
           </a>
           <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20please%20share%20today's%20wholesale%20rates%20for%20cloth%20materials." target="_blank" rel="noopener" class="flex items-center gap-1.5 px-3.5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-xs font-semibold uppercase tracking-wider shadow-sm hover:shadow-md transition-all">
             <i data-lucide="message-circle" class="w-4 h-4"></i>
-            <span>WhatsApp Rates</span>
+            <span data-i18n="btnWhatsAppRates">WhatsApp Rates</span>
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="lg:hidden p-2 rounded-lg text-brand-maroon hover:bg-brand-linen/60 transition-colors focus:outline-none">
-          <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
-        </button>
+        <!-- Mobile Right Controls (Mobile Language Button + Hamburger) -->
+        <div class="flex items-center gap-1.5 sm:hidden">
+          <!-- Prominent Mobile Language Converter Button at Header -->
+          <button onclick="toggleLanguage()" class="lang-btn-tooltip flex items-center gap-1 px-2.5 py-1.5 text-xs font-bold text-brand-maroon border border-brand-gold/60 bg-brand-goldPale rounded-lg shadow-sm active:scale-95 transition-all" title="Convert to Hindi / हिन्दी में देखें" aria-label="Convert to Hindi">
+            <i data-lucide="languages" class="w-3.5 h-3.5 text-brand-gold"></i>
+            <span class="lang-btn-text">हिन्दी</span>
+          </button>
+
+          <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="p-2 rounded-lg text-brand-maroon hover:bg-brand-linen/60 transition-colors focus:outline-none">
+            <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Mobile Drawer Menu -->
     <div id="mobileMenu" class="hidden lg:hidden bg-brand-cream border-b border-brand-linen px-4 pt-2 pb-6 space-y-3 shadow-2xl">
+      <!-- Language Switcher Row in Drawer -->
+      <div class="px-3 py-2 bg-brand-goldPale/60 rounded-xl border border-brand-gold/30 flex items-center justify-between">
+        <div class="flex items-center gap-2 text-xs font-bold text-brand-maroon">
+          <i data-lucide="languages" class="w-4 h-4 text-brand-gold"></i>
+          <span data-i18n="selectLanguage">भाषा चुनें / Language:</span>
+        </div>
+        <div class="inline-flex rounded-lg border border-brand-gold/40 bg-white p-0.5 text-xs font-bold">
+          <button onclick="setLanguage('en')" id="drawerLangEn" class="px-2.5 py-1 rounded-md transition-colors bg-brand-maroon text-white">EN</button>
+          <button onclick="setLanguage('hi')" id="drawerLangHi" class="px-2.5 py-1 rounded-md transition-colors text-brand-charcoal hover:bg-brand-linen">हिन्दी</button>
+        </div>
+      </div>
+
       <nav class="flex flex-col space-y-2 text-sm font-semibold text-brand-charcoal pt-1">
-        <a href="#catalog" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Cloth Materials Catalog</a>
-        <a href="#chikankari" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Chikankari Base Fabrics</a>
-        <a href="#gallery" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Shop Walkthrough Photos</a>
-        <a href="#quote-calculator" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Instant Quote Calculator</a>
-        <a href="#why-us" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Why Choose Kripa Fabric</a>
+        <a href="#catalog" data-i18n="drawerMaterials" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Cloth Materials Catalog</a>
+        <a href="#chikankari" data-i18n="drawerChikankari" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Chikankari Base Fabrics</a>
+        <a href="#gallery" data-i18n="drawerPhotos" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Shop Walkthrough Photos</a>
+        <a href="#quote-calculator" data-i18n="drawerCalculator" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Instant Quote Calculator</a>
+        <a href="#why-us" data-i18n="drawerWhyUs" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Why Choose Kripa Fabric</a>
         <a href="#stock-rates" class="mobile-nav-link px-3 py-2.5 rounded-xl bg-brand-goldPale border border-brand-gold/40 font-bold text-brand-maroon flex items-center justify-between shadow-sm">
           <span class="flex items-center gap-2">
             <i data-lucide="tag" class="w-4 h-4 text-brand-gold"></i>
-            <span>Stock / Maal Rates (माल रेट्स लिस्ट)</span>
+            <span data-i18n="drawerRates">Stock / Maal Rates (माल रेट्स लिस्ट)</span>
           </span>
-          <span class="text-[10px] bg-brand-maroon text-white px-2 py-0.5 rounded-md font-bold">48 Items</span>
+          <span data-i18n="drawerRatesBadge" class="text-[10px] bg-brand-maroon text-white px-2 py-0.5 rounded-md font-bold">48 Items</span>
         </a>
-        <a href="#contact" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Visit Shop No. 10 (Chowk)</a>
+        <a href="#contact" data-i18n="drawerVisit" class="mobile-nav-link px-3 py-2 rounded-lg hover:bg-brand-linen transition-colors">Visit Shop No. 10 (Chowk)</a>
       </nav>
       <div class="pt-2 border-t border-brand-linen flex flex-col gap-2">
         <a href="tel:+919839201666" class="w-full flex items-center justify-center gap-2 py-3 bg-brand-maroon text-white font-medium rounded-xl text-xs uppercase tracking-wider shadow">
           <i data-lucide="phone" class="w-4 h-4 text-brand-goldLight"></i>
-          <span>Direct Call: +91 9839201666</span>
+          <span data-i18n="drawerDirectCall">Direct Call: +91 9839201666</span>
         </a>
         <a href="https://wa.me/919839201666" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 py-3 bg-emerald-700 text-white font-medium rounded-xl text-xs uppercase tracking-wider shadow">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
-          <span>WhatsApp Today's Rates</span>
+          <span data-i18n="drawerWhatsApp">WhatsApp Today's Rates</span>
         </a>
       </div>
     </div>
@@ -278,15 +310,15 @@
           <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-goldPale border border-brand-gold/40 text-brand-maroon text-xs font-semibold tracking-wide">
               <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
-              <span>Wholesale Cloth Materials • Estd. 1991</span>
+              <span data-i18n="heroBadge">Wholesale Cloth Materials • Estd. 1991</span>
             </div>
 
-            <h1 class="font-display text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-maroon leading-[1.15] tracking-tight">
+            <h1 data-i18n-html="heroHeading" class="font-display text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-maroon leading-[1.15] tracking-tight">
               Lucknow’s Premier <br />
               <span class="gold-shimmer">Wholesale Cloth Materials</span> Depot
             </h1>
 
-            <p class="text-sm sm:text-base lg:text-lg text-brand-muted max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            <p data-i18n-html="heroDescription" class="text-sm sm:text-base lg:text-lg text-brand-muted max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
               Located in <strong>Chowk, Lucknow</strong>. We supply raw cloth materials, thans, rolls, and wholesale bales across <strong>Blue Cathaya &amp; Sunpheel Georgette, Rasmalai Cotton, 60-60 Cambric, Pure Silks, Loom Aadhi, and Dupattas</strong> to boutiques, garment manufacturers, and master Chikankari artisans across India.
             </p>
 
@@ -294,32 +326,32 @@
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-1">
               <a href="#stock-rates" class="w-full sm:w-auto px-6 py-3.5 maroon-gradient text-white font-semibold rounded-xl text-xs sm:text-sm uppercase tracking-wider shadow-luxury flex items-center justify-center gap-2 transition-all">
                 <i data-lucide="tag" class="w-4 h-4 text-brand-goldLight"></i>
-                <span>View Stock &amp; Maal Rates</span>
+                <span data-i18n="heroBtnRates">View Stock &amp; Maal Rates</span>
               </a>
 
               <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20please%20share%20your%20wholesale%20maal%20rate%20sheet." target="_blank" rel="noopener" class="w-full sm:w-auto px-5 py-3.5 bg-white hover:bg-brand-linen/40 text-brand-maroon font-semibold border border-brand-maroon/20 rounded-xl text-xs sm:text-sm uppercase tracking-wider shadow-sm flex items-center justify-center gap-2 transition-all">
                 <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
-                <span>Get Today's Rates on WhatsApp</span>
+                <span data-i18n="heroBtnWhatsApp">Get Today's Rates on WhatsApp</span>
               </a>
             </div>
 
             <!-- Quick Trust Metric Badges (2x2 grid on mobile) -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 pt-4 border-t border-brand-linen/80">
               <div class="text-left bg-white/80 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl border border-brand-linen">
-                <div class="font-display text-xl sm:text-3xl font-bold text-brand-maroon">34+</div>
-                <div class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-brand-muted">Years Legacy</div>
+                <div data-i18n="metric1Val" class="font-display text-xl sm:text-3xl font-bold text-brand-maroon">34+</div>
+                <div data-i18n="metric1Label" class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-brand-muted">Years Legacy</div>
               </div>
               <div class="text-left bg-white/80 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl border border-brand-linen">
-                <div class="font-display text-xl sm:text-3xl font-bold text-brand-maroon">48+</div>
-                <div class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-brand-muted">Cloth Varieties</div>
+                <div data-i18n="metric2Val" class="font-display text-xl sm:text-3xl font-bold text-brand-maroon">48+</div>
+                <div data-i18n="metric2Label" class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-brand-muted">Cloth Varieties</div>
               </div>
               <div class="text-left bg-white/80 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl border border-brand-linen">
-                <div class="font-display text-xl sm:text-3xl font-bold text-brand-maroon">100%</div>
-                <div class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-brand-muted">Ready Thans</div>
+                <div data-i18n="metric3Val" class="font-display text-xl sm:text-3xl font-bold text-brand-maroon">100%</div>
+                <div data-i18n="metric3Label" class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-brand-muted">Ready Thans</div>
               </div>
               <div class="text-left bg-white/80 backdrop-blur-sm p-2.5 sm:p-3 rounded-xl border border-brand-linen">
-                <div class="font-display text-xl sm:text-3xl font-bold text-brand-maroon">Pan-India</div>
-                <div class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-brand-muted">Bale Transport</div>
+                <div data-i18n="metric4Val" class="font-display text-xl sm:text-3xl font-bold text-brand-maroon">Pan-India</div>
+                <div data-i18n="metric4Label" class="text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-brand-muted">Bale Transport</div>
               </div>
             </div>
           </div>
@@ -341,9 +373,9 @@
                 />
                 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 sm:p-6 text-white">
-                  <span class="text-[10px] sm:text-xs uppercase tracking-widest text-brand-goldLight font-semibold">Wholesale Depot Entrance</span>
-                  <h3 class="font-display text-lg sm:text-xl font-bold">Shop No. 10, Chowk, Lucknow</h3>
-                  <p class="text-[11px] sm:text-xs text-gray-200 mt-0.5">Direct entry to our wholesale cloth materials depot in Munnulal Dharamshala Market.</p>
+                  <span data-i18n="heroImgBadge" class="text-[10px] sm:text-xs uppercase tracking-widest text-brand-goldLight font-semibold">Wholesale Depot Entrance</span>
+                  <h3 data-i18n="heroImgTitle" class="font-display text-lg sm:text-xl font-bold">Shop No. 10, Chowk, Lucknow</h3>
+                  <p data-i18n="heroImgDesc" class="text-[11px] sm:text-xs text-gray-200 mt-0.5">Direct entry to our wholesale cloth materials depot in Munnulal Dharamshala Market.</p>
                 </div>
               </div>
 
@@ -355,8 +387,8 @@
                   class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover border border-brand-linen flex-shrink-0"
                 />
                 <div>
-                  <div class="text-[10px] sm:text-[11px] font-bold text-brand-maroon uppercase tracking-wide">Ready Thans</div>
-                  <div class="text-[11px] sm:text-xs font-medium text-brand-charcoal truncate">Rasmalai &amp; 60-60 Cotton</div>
+                  <div data-i18n="floatCard1Title" class="text-[10px] sm:text-[11px] font-bold text-brand-maroon uppercase tracking-wide">Ready Thans</div>
+                  <div data-i18n="floatCard1Subtitle" class="text-[11px] sm:text-xs font-medium text-brand-charcoal truncate">Rasmalai &amp; 60-60 Cotton</div>
                 </div>
               </div>
 
@@ -364,8 +396,8 @@
               <div class="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 bg-brand-maroon text-white p-2.5 sm:p-3 rounded-xl shadow-lg border border-brand-gold/40 flex items-center gap-2">
                 <i data-lucide="award" class="w-4 h-4 sm:w-5 sm:h-5 text-brand-gold flex-shrink-0"></i>
                 <div class="text-left">
-                  <div class="text-[9px] sm:text-[10px] text-brand-goldLight font-bold uppercase tracking-wider">Direct Wholesale</div>
-                  <div class="text-[11px] sm:text-xs font-semibold">Chowk Mandi Rates</div>
+                  <div data-i18n="floatCard2Title" class="text-[9px] sm:text-[10px] text-brand-goldLight font-bold uppercase tracking-wider">Direct Wholesale</div>
+                  <div data-i18n="floatCard2Subtitle" class="text-[11px] sm:text-xs font-semibold">Chowk Mandi Rates</div>
                 </div>
               </div>
 
@@ -384,12 +416,12 @@
         <div class="text-center max-w-3xl mx-auto mb-10 space-y-2 sm:space-y-3">
           <div class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold text-brand-gold">
             <i data-lucide="layers" class="w-4 h-4"></i>
-            <span>Wholesale Cloth Materials</span>
+            <span data-i18n="showcaseBadge">Wholesale Cloth Materials</span>
           </div>
-          <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon">
+          <h2 data-i18n="showcaseTitle" class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon">
             Featured Cloth Materials
           </h2>
-          <p class="text-brand-muted text-xs sm:text-base">
+          <p data-i18n="showcaseSubtitle" class="text-brand-muted text-xs sm:text-base">
             Detailed technical breakdown of our core cloth materials. Woven, processed, and quality-tested for dye-houses, master Chikankari artisans, and bulk garment makers.
           </p>
         </div>
@@ -406,10 +438,10 @@
                 alt="Pure Cotton Mulmul Cloth Material Folds" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 bg-brand-maroon text-white text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
+              <span data-i18n="card1BadgeL" class="absolute top-3 left-3 bg-brand-maroon text-white text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
                 Chikankari No. 1
               </span>
-              <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
+              <span data-i18n="card1BadgeR" class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
                 100% Cotton Weave
               </span>
             </div>
@@ -417,32 +449,32 @@
             <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
               <div>
                 <div class="flex items-center justify-between text-[11px] text-brand-gold font-semibold uppercase tracking-wider mb-1">
-                  <span>Panna: 44" / 48"</span>
-                  <span>Dye-Ready Bio-Washed</span>
+                  <span data-i18n="card1Panna">Panna: 44" / 48"</span>
+                  <span data-i18n="card1Finish">Dye-Ready Bio-Washed</span>
                 </div>
-                <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
+                <h3 data-i18n="card1Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
                   Pure Mulmul Cotton 60x60 &amp; Rasmalai
                 </h3>
-                <p class="text-xs text-brand-muted mt-1 line-clamp-2">
+                <p data-i18n="card1Desc" class="text-xs text-brand-muted mt-1 line-clamp-2">
                   Featherlight, ultra-soft luxury combed cotton woven specifically for shadow-work, phanda, and jaali hand embroidery.
                 </p>
                 
                 <div class="flex flex-wrap gap-1.5 mt-2.5">
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Pre-Shrunk</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Fast Absorbency</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Zero Puckering</span>
+                  <span data-i18n="card1Tag1" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Pre-Shrunk</span>
+                  <span data-i18n="card1Tag2" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Fast Absorbency</span>
+                  <span data-i18n="card1Tag3" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Zero Puckering</span>
                 </div>
               </div>
 
               <div class="pt-3 border-t border-brand-linen flex items-center justify-between gap-2">
                 <button onclick="openFabricModal('mulmul-cotton')" class="text-xs font-semibold text-brand-maroon hover:text-brand-crimson underline underline-offset-4 flex items-center gap-1">
-                  <span>Technical Specs</span>
+                  <span data-i18n="specBtn">Technical Specs</span>
                   <i data-lucide="info" class="w-3.5 h-3.5"></i>
                 </button>
 
                 <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20I'm%20inquiring%20about%20Pure%20Mulmul%20Cotton%2060x60%20and%20Rasmalai%20than%20rates." target="_blank" rel="noopener" class="px-3.5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow transition-all">
                   <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-                  <span>Inquire Than</span>
+                  <span data-i18n="inquireBtn">Inquire Than</span>
                 </a>
               </div>
             </div>
@@ -457,10 +489,10 @@
                 alt="Pure Georgette Pebble Crepe Cloth Texture" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 bg-brand-gold text-brand-dark text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
+              <span data-i18n="card2BadgeL" class="absolute top-3 left-3 bg-brand-gold text-brand-dark text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
                 Blue Cathaya &amp; Sunpheel
               </span>
-              <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
+              <span data-i18n="card2BadgeR" class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
                 Viscose 60g / 80g
               </span>
             </div>
@@ -468,32 +500,32 @@
             <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
               <div>
                 <div class="flex items-center justify-between text-[11px] text-brand-gold font-semibold uppercase tracking-wider mb-1">
-                  <span>Panna: 44"</span>
-                  <span>100% Dyeable Crepe</span>
+                  <span data-i18n="card2Panna">Panna: 44"</span>
+                  <span data-i18n="card2Finish">100% Dyeable Crepe</span>
                 </div>
-                <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
+                <h3 data-i18n="card2Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
                   Pure Viscose Georgette (Blue Cathaya)
                 </h3>
-                <p class="text-xs text-brand-muted mt-1 line-clamp-2">
+                <p data-i18n="card2Desc" class="text-xs text-brand-muted mt-1 line-clamp-2">
                   Luxurious flowing drape with heavy crepe twist. Absorbs vibrant reactive and acid dyes flawlessly. The industry benchmark for Chikankari suites.
                 </p>
                 
                 <div class="flex flex-wrap gap-1.5 mt-2.5">
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Heavy Bounce Fall</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">High S&amp;Z Crepe Twist</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Full Thans</span>
+                  <span data-i18n="card2Tag1" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Heavy Bounce Fall</span>
+                  <span data-i18n="card2Tag2" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">High S&amp;Z Crepe Twist</span>
+                  <span data-i18n="card2Tag3" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Full Thans</span>
                 </div>
               </div>
 
               <div class="pt-3 border-t border-brand-linen flex items-center justify-between gap-2">
                 <button onclick="openFabricModal('viscose-georgette')" class="text-xs font-semibold text-brand-maroon hover:text-brand-crimson underline underline-offset-4 flex items-center gap-1">
-                  <span>Technical Specs</span>
+                  <span data-i18n="specBtn">Technical Specs</span>
                   <i data-lucide="info" class="w-3.5 h-3.5"></i>
                 </button>
 
                 <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20I%20need%20wholesale%20rates%20for%20Blue%20Cathaya%20and%20Sunpheel%20Pure%20Georgette." target="_blank" rel="noopener" class="px-3.5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow transition-all">
                   <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-                  <span>Inquire Than</span>
+                  <span data-i18n="inquireBtn">Inquire Than</span>
                 </a>
               </div>
             </div>
@@ -508,10 +540,10 @@
                 alt="Silk and Chanderi Cloth Material Rolls and Folds" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 bg-brand-crimson text-white text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
+              <span data-i18n="card3BadgeL" class="absolute top-3 left-3 bg-brand-crimson text-white text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
                 Royal Festive
               </span>
-              <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
+              <span data-i18n="card3BadgeR" class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
                 Pure Silk Blend
               </span>
             </div>
@@ -519,32 +551,32 @@
             <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
               <div>
                 <div class="flex items-center justify-between text-[11px] text-brand-gold font-semibold uppercase tracking-wider mb-1">
-                  <span>Panna: 44"</span>
-                  <span>Natural Sheen</span>
+                  <span data-i18n="card3Panna">Panna: 44"</span>
+                  <span data-i18n="card3Finish">Natural Sheen</span>
                 </div>
-                <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
+                <h3 data-i18n="card3Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
                   Pure Chanderi &amp; Silk 40g/50g
                 </h3>
-                <p class="text-xs text-brand-muted mt-1 line-clamp-2">
+                <p data-i18n="card3Desc" class="text-xs text-brand-muted mt-1 line-clamp-2">
                   Regal luster with fine textured weave. Highly prized for festive kurtas, sarees, lehengas, and designer Chikankari yoke work.
                 </p>
                 
                 <div class="flex flex-wrap gap-1.5 mt-2.5">
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Opulent Luster</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Zari/Plain Weave</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Designer Quality</span>
+                  <span data-i18n="card3Tag1" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Opulent Luster</span>
+                  <span data-i18n="card3Tag2" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Zari/Plain Weave</span>
+                  <span data-i18n="card3Tag3" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Designer Quality</span>
                 </div>
               </div>
 
               <div class="pt-3 border-t border-brand-linen flex items-center justify-between gap-2">
                 <button onclick="openFabricModal('chanderi-silk')" class="text-xs font-semibold text-brand-maroon hover:text-brand-crimson underline underline-offset-4 flex items-center gap-1">
-                  <span>Technical Specs</span>
+                  <span data-i18n="specBtn">Technical Specs</span>
                   <i data-lucide="info" class="w-3.5 h-3.5"></i>
                 </button>
 
                 <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20I'm%20inquiring%20about%20Pure%20Chanderi%20and%20Silk%2040g/50g%20rates." target="_blank" rel="noopener" class="px-3.5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow transition-all">
                   <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-                  <span>Inquire Than</span>
+                  <span data-i18n="inquireBtn">Inquire Than</span>
                 </a>
               </div>
             </div>
@@ -559,10 +591,10 @@
                 alt="Kota Doria Checked Grid Cloth Material" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 bg-brand-maroon text-white text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
+              <span data-i18n="card4BadgeL" class="absolute top-3 left-3 bg-brand-maroon text-white text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
                 Signature Weave
               </span>
-              <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
+              <span data-i18n="card4BadgeR" class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
                 Khat Check Grid
               </span>
             </div>
@@ -570,32 +602,32 @@
             <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
               <div>
                 <div class="flex items-center justify-between text-[11px] text-brand-gold font-semibold uppercase tracking-wider mb-1">
-                  <span>Panna: 44"</span>
-                  <span>Cotton / Silk Khat</span>
+                  <span data-i18n="card4Panna">Panna: 44"</span>
+                  <span data-i18n="card4Finish">Cotton / Silk Khat</span>
                 </div>
-                <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
+                <h3 data-i18n="card4Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
                   Kota Doria (Cotton &amp; Silk)
                 </h3>
-                <p class="text-xs text-brand-muted mt-1 line-clamp-2">
+                <p data-i18n="card4Desc" class="text-xs text-brand-muted mt-1 line-clamp-2">
                   Distinctive check pattern ('khat') weave. Exceptionally airy and graceful, ideal for summer suits, dupattas, and light artisan embroidery.
                 </p>
                 
                 <div class="flex flex-wrap gap-1.5 mt-2.5">
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Airy &amp; Crisp</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Pure Khat Pattern</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Summer Favorite</span>
+                  <span data-i18n="card4Tag1" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Airy &amp; Crisp</span>
+                  <span data-i18n="card4Tag2" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Pure Khat Pattern</span>
+                  <span data-i18n="card4Tag3" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Summer Favorite</span>
                 </div>
               </div>
 
               <div class="pt-3 border-t border-brand-linen flex items-center justify-between gap-2">
                 <button onclick="openFabricModal('kota-doria')" class="text-xs font-semibold text-brand-maroon hover:text-brand-crimson underline underline-offset-4 flex items-center gap-1">
-                  <span>Technical Specs</span>
+                  <span data-i18n="specBtn">Technical Specs</span>
                   <i data-lucide="info" class="w-3.5 h-3.5"></i>
                 </button>
 
                 <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20I'm%20interested%20in%20Kota%20Doria%20cotton%20and%20silk%20rates." target="_blank" rel="noopener" class="px-3.5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow transition-all">
                   <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-                  <span>Inquire Than</span>
+                  <span data-i18n="inquireBtn">Inquire Than</span>
                 </a>
               </div>
             </div>
@@ -610,10 +642,10 @@
                 alt="Pure Chiffon Sheer Cloth Material Drape" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 bg-brand-gold text-brand-dark text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
+              <span data-i18n="card5BadgeL" class="absolute top-3 left-3 bg-brand-gold text-brand-dark text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
                 Chamundi CS 22/55
               </span>
-              <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
+              <span data-i18n="card5BadgeR" class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
                 Pure Bemberg Sheer
               </span>
             </div>
@@ -621,32 +653,32 @@
             <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
               <div>
                 <div class="flex items-center justify-between text-[11px] text-brand-gold font-semibold uppercase tracking-wider mb-1">
-                  <span>Panna: 44"</span>
-                  <span>Featherlight Sheer</span>
+                  <span data-i18n="card5Panna">Panna: 44"</span>
+                  <span data-i18n="card5Finish">Featherlight Sheer</span>
                 </div>
-                <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
+                <h3 data-i18n="card5Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
                   Pure Chiffon &amp; Chamundi Shiffon
                 </h3>
-                <p class="text-xs text-brand-muted mt-1 line-clamp-2">
+                <p data-i18n="card5Desc" class="text-xs text-brand-muted mt-1 line-clamp-2">
                   Ethereal transparency and featherweight drape. Preferred across designer studios for flowing bridal dupattas and sheer overlays.
                 </p>
                 
                 <div class="flex flex-wrap gap-1.5 mt-2.5">
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Liquid Float</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">CS 22 &amp; CS 55 Count</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Quick Dye</span>
+                  <span data-i18n="card5Tag1" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Liquid Float</span>
+                  <span data-i18n="card5Tag2" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">CS 22 &amp; CS 55 Count</span>
+                  <span data-i18n="card5Tag3" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Quick Dye</span>
                 </div>
               </div>
 
               <div class="pt-3 border-t border-brand-linen flex items-center justify-between gap-2">
                 <button onclick="openFabricModal('pure-chiffon')" class="text-xs font-semibold text-brand-maroon hover:text-brand-crimson underline underline-offset-4 flex items-center gap-1">
-                  <span>Technical Specs</span>
+                  <span data-i18n="specBtn">Technical Specs</span>
                   <i data-lucide="info" class="w-3.5 h-3.5"></i>
                 </button>
 
                 <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20please%20share%20wholesale%20rates%20for%20Chamundi%20Shiffon%20and%20Pure%20Chiffon." target="_blank" rel="noopener" class="px-3.5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow transition-all">
                   <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-                  <span>Inquire Than</span>
+                  <span data-i18n="inquireBtn">Inquire Than</span>
                 </a>
               </div>
             </div>
@@ -661,10 +693,10 @@
                 alt="Plain 60-60 Cambric Cotton and Glaze Cotton Wholesale Than Bolts" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 bg-brand-maroon text-white text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
+              <span data-i18n="card6BadgeL" class="absolute top-3 left-3 bg-brand-maroon text-white text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded shadow uppercase tracking-wider">
                 Wholesale Thans
               </span>
-              <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
+              <span data-i18n="card6BadgeR" class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-brand-charcoal text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded shadow">
                 Plain Dyeable
               </span>
             </div>
@@ -672,32 +704,32 @@
             <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
               <div>
                 <div class="flex items-center justify-between text-[11px] text-brand-gold font-semibold uppercase tracking-wider mb-1">
-                  <span>Panna: 44" / 58"</span>
-                  <span>Pure Combed Cotton</span>
+                  <span data-i18n="card6Panna">Panna: 44" / 58"</span>
+                  <span data-i18n="card6Finish">Pure Combed Cotton</span>
                 </div>
-                <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
+                <h3 data-i18n="card6Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal group-hover:text-brand-maroon transition-colors">
                   60-60 Cambric &amp; Glaze Cotton
                 </h3>
-                <p class="text-xs text-brand-muted mt-1 line-clamp-2">
+                <p data-i18n="card6Desc" class="text-xs text-brand-muted mt-1 line-clamp-2">
                   Fine combed 60-60 plain weave and glaze cotton than bolts. High thread density, pre-shrunk, ideal for solid dyeing, block-print bases, and bulk apparel.
                 </p>
                 
                 <div class="flex flex-wrap gap-1.5 mt-2.5">
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Plain Solid Than</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Export Quality</span>
-                  <span class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Bale Packs</span>
+                  <span data-i18n="card6Tag1" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Plain Solid Than</span>
+                  <span data-i18n="card6Tag2" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Export Quality</span>
+                  <span data-i18n="card6Tag3" class="px-2 py-0.5 rounded bg-brand-linen text-[10px] font-medium text-brand-charcoal">Bale Packs</span>
                 </div>
               </div>
 
               <div class="pt-3 border-t border-brand-linen flex items-center justify-between gap-2">
                 <button onclick="openFabricModal('cambric-cotton')" class="text-xs font-semibold text-brand-maroon hover:text-brand-crimson underline underline-offset-4 flex items-center gap-1">
-                  <span>Technical Specs</span>
+                  <span data-i18n="specBtn">Technical Specs</span>
                   <i data-lucide="info" class="w-3.5 h-3.5"></i>
                 </button>
 
                 <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20please%20share%20wholesale%20than%20rates%20for%2060-60%20Cambric%20and%20Glaze%20Cotton." target="_blank" rel="noopener" class="px-3.5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow transition-all">
                   <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-                  <span>Inquire Than</span>
+                  <span data-i18n="inquireBtn">Inquire Than</span>
                 </a>
               </div>
             </div>
@@ -708,13 +740,13 @@
         <!-- Custom Sourcing Banner -->
         <div class="mt-10 sm:mt-14 bg-gradient-to-r from-brand-maroon to-brand-burgundy rounded-2xl p-6 sm:p-10 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-5 border border-brand-gold/30 text-center md:text-left">
           <div class="space-y-1.5 sm:space-y-2">
-            <span class="text-[10px] sm:text-xs uppercase tracking-widest text-brand-gold font-bold">Custom Weaver &amp; Dye Service</span>
-            <h3 class="font-display text-xl sm:text-3xl font-bold">Looking for a Specific Cloth Material, GSM or Shade?</h3>
-            <p class="text-xs sm:text-sm text-gray-200 max-w-xl">
+            <span data-i18n="sourceBadge" class="text-[10px] sm:text-xs uppercase tracking-widest text-brand-gold font-bold">Custom Weaver &amp; Dye Service</span>
+            <h3 data-i18n="sourceTitle" class="font-display text-xl sm:text-3xl font-bold">Looking for a Specific Cloth Material, GSM or Shade?</h3>
+            <p data-i18n="sourceDesc" class="text-xs sm:text-sm text-gray-200 max-w-xl">
               We source and mill-process custom bulk requirements across cottons, silks, georgettes, and synthetics for fashion houses and Chikankari clusters.
             </p>
           </div>
-          <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20I%20have%20a%20custom%20cloth%20material%20bulk%20requirement." target="_blank" rel="noopener" class="w-full sm:w-auto px-6 py-3.5 bg-brand-gold hover:bg-brand-goldLight text-brand-dark font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all whitespace-nowrap">
+          <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20I%20have%20a%20custom%20cloth%20material%20bulk%20requirement." target="_blank" rel="noopener" data-i18n="sourceBtn" class="w-full sm:w-auto px-6 py-3.5 bg-brand-gold hover:bg-brand-goldLight text-brand-dark font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all whitespace-nowrap">
             Submit Custom Requirement
           </a>
         </div>
@@ -731,18 +763,18 @@
           <div class="lg:col-span-6 space-y-4 sm:space-y-6">
             <div class="inline-flex items-center gap-1.5 text-brand-gold font-semibold text-[11px] sm:text-xs tracking-widest uppercase">
               <i data-lucide="feather" class="w-4 h-4"></i>
-              <span>Artisan Foundation</span>
+              <span data-i18n="chikanBadge">Artisan Foundation</span>
             </div>
 
-            <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon leading-tight">
+            <h2 data-i18n="chikanTitle" class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon leading-tight">
               Why Lucknow's Master Chikankari Artisans Trust Kripa Fabric
             </h2>
 
-            <p class="text-brand-muted text-xs sm:text-base leading-relaxed">
+            <p data-i18n-html="chikanP1" class="text-brand-muted text-xs sm:text-base leading-relaxed">
               Authentic Chikankari embroidery involves over 32 distinct stitches—including delicate <em>Tepchi</em>, <em>Bakhiya</em> (shadow work), <em>Phanda</em>, and <em>Jaali</em>. Standard commercial fabrics often tear, warp, or pucker under the artisan’s needle.
             </p>
 
-            <p class="text-brand-muted text-xs sm:text-base leading-relaxed">
+            <p data-i18n="chikanP2" class="text-brand-muted text-xs sm:text-base leading-relaxed">
               At Kripa Fabric, our cloth materials are calibrated with precise yarn tensile strength, open square grid warp/weft balance, and residue-free finishing, making them effortless to puncture for jaali work while retaining shape after washing and dyeing.
             </p>
 
@@ -752,8 +784,8 @@
                   <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-xs sm:text-sm text-brand-charcoal">Needle-Friendly Warp &amp; Weft Count</h4>
-                  <p class="text-[11px] sm:text-xs text-brand-muted mt-0.5">Balanced weave count allows fine needles to glide through without snagging or leaving distorted puncture holes.</p>
+                  <h4 data-i18n="chikanFeature1Title" class="font-bold text-xs sm:text-sm text-brand-charcoal">Needle-Friendly Warp &amp; Weft Count</h4>
+                  <p data-i18n="chikanFeature1Desc" class="text-[11px] sm:text-xs text-brand-muted mt-0.5">Balanced weave count allows fine needles to glide through without snagging or leaving distorted puncture holes.</p>
                 </div>
               </div>
 
@@ -762,8 +794,8 @@
                   <i data-lucide="droplet" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-xs sm:text-sm text-brand-charcoal">Post-Embroidery Dye Compatibility</h4>
-                  <p class="text-[11px] sm:text-xs text-brand-muted mt-0.5">Uniform absorption for pastel dyes (the hallmark of Chikankari) without streaking or differential cotton-thread fading.</p>
+                  <h4 data-i18n="chikanFeature2Title" class="font-bold text-xs sm:text-sm text-brand-charcoal">Post-Embroidery Dye Compatibility</h4>
+                  <p data-i18n="chikanFeature2Desc" class="text-[11px] sm:text-xs text-brand-muted mt-0.5">Uniform absorption for pastel dyes (the hallmark of Chikankari) without streaking or differential cotton-thread fading.</p>
                 </div>
               </div>
 
@@ -772,8 +804,8 @@
                   <i data-lucide="shield-check" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-xs sm:text-sm text-brand-charcoal">Preshrunk &amp; Decatized</h4>
-                  <p class="text-[11px] sm:text-xs text-brand-muted mt-0.5">Pre-conditioned to ensure that delicate shadow embroidery does not crimp or bunch up when washed.</p>
+                  <h4 data-i18n="chikanFeature3Title" class="font-bold text-xs sm:text-sm text-brand-charcoal">Preshrunk &amp; Decatized</h4>
+                  <p data-i18n="chikanFeature3Desc" class="text-[11px] sm:text-xs text-brand-muted mt-0.5">Pre-conditioned to ensure that delicate shadow embroidery does not crimp or bunch up when washed.</p>
                 </div>
               </div>
             </div>
@@ -791,10 +823,10 @@
               <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-md p-3.5 sm:p-5 rounded-xl border border-brand-gold/40 shadow-lg">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold">Chowk Market Tradition</span>
-                    <h4 class="font-display text-base sm:text-lg font-bold text-brand-maroon">Ready Stacks For Boutiques &amp; Karigars</h4>
+                    <span data-i18n="chikanCardBadge" class="text-[10px] font-bold uppercase tracking-wider text-brand-gold">Chowk Market Tradition</span>
+                    <h4 data-i18n="chikanCardTitle" class="font-display text-base sm:text-lg font-bold text-brand-maroon">Ready Stacks For Boutiques &amp; Karigars</h4>
                   </div>
-                  <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20I%20am%20a%20Chikankari%20artisan/boutique%20and%20need%20base%20cloth%20swatches." target="_blank" rel="noopener" class="w-full sm:w-auto px-3.5 py-2.5 bg-brand-maroon hover:bg-brand-burgundy text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow text-center">
+                  <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20I%20am%20a%20Chikankari%20artisan/boutique%20and%20need%20base%20cloth%20swatches." target="_blank" rel="noopener" data-i18n="chikanCardBtn" class="w-full sm:w-auto px-3.5 py-2.5 bg-brand-maroon hover:bg-brand-burgundy text-white text-xs font-semibold uppercase tracking-wider rounded-lg shadow text-center">
                     Request Swatches
                   </a>
                 </div>
@@ -814,12 +846,12 @@
         <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 space-y-2 sm:space-y-3">
           <div class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold text-brand-gold">
             <i data-lucide="store" class="w-4 h-4"></i>
-            <span>Authentic Shop Photos • Chowk, Lucknow</span>
+            <span data-i18n="galleryBadge">Authentic Shop Photos • Chowk, Lucknow</span>
           </div>
-          <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon">
+          <h2 data-i18n="galleryTitle" class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon">
             Take a Walk Inside Our Chowk Shop
           </h2>
-          <p class="text-brand-muted text-xs sm:text-base">
+          <p data-i18n="galleryDesc" class="text-brand-muted text-xs sm:text-base">
             Step right into our wholesale depot in Munnulal Dharamshala Market, Chowk, Lucknow. We house endless meters of fresh cloth stock ready for immediate physical inspection or swift delivery.
           </p>
         </div>
@@ -834,9 +866,9 @@
               class="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-all duration-500"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 sm:p-5 text-white">
-              <span class="text-brand-goldLight text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Shop Entrance</span>
-              <h4 class="font-display text-base sm:text-lg font-bold">Shop No. 10 Entrance &amp; Signboard</h4>
-              <p class="text-[11px] text-gray-300">Tap to enlarge</p>
+              <span data-i18n="photo1Badge" class="text-brand-goldLight text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Shop Entrance</span>
+              <h4 data-i18n="photo1Title" class="font-display text-base sm:text-lg font-bold">Shop No. 10 Entrance &amp; Signboard</h4>
+              <p data-i18n="photoTapEnlarge" class="text-[11px] text-gray-300">Tap to enlarge</p>
             </div>
           </div>
 
@@ -848,9 +880,9 @@
               class="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-all duration-500"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 sm:p-5 text-white">
-              <span class="text-brand-goldLight text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Store Counter</span>
-              <h4 class="font-display text-base sm:text-lg font-bold">Physical Inspection &amp; Billing Counter</h4>
-              <p class="text-[11px] text-gray-300">Tap to enlarge</p>
+              <span data-i18n="photo2Badge" class="text-brand-goldLight text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Store Counter</span>
+              <h4 data-i18n="photo2Title" class="font-display text-base sm:text-lg font-bold">Physical Inspection &amp; Billing Counter</h4>
+              <p data-i18n="photoTapEnlarge" class="text-[11px] text-gray-300">Tap to enlarge</p>
             </div>
           </div>
 
@@ -862,9 +894,9 @@
               class="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-all duration-500"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 sm:p-5 text-white">
-              <span class="text-brand-goldLight text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Store Counter</span>
-              <h4 class="font-display text-base sm:text-lg font-bold">Physical Inspection &amp; Billing Counter</h4>
-              <p class="text-[11px] text-gray-300">Tap to enlarge</p>
+              <span data-i18n="photo3Badge" class="text-brand-goldLight text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Store Stacks</span>
+              <h4 data-i18n="photo3Title" class="font-display text-base sm:text-lg font-bold">Cotton, Georgette &amp; Silk Than Stacks</h4>
+              <p data-i18n="photoTapEnlarge" class="text-[11px] text-gray-300">Tap to enlarge</p>
             </div>
           </div>
 
@@ -882,12 +914,12 @@
           <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8 space-y-1.5 sm:space-y-2">
             <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-brand-gold">
               <i data-lucide="calculator" class="w-4 h-4"></i>
-              <span>Instant WhatsApp Wholesale Quote</span>
+              <span data-i18n="calcBadge">Instant WhatsApp Wholesale Quote</span>
             </div>
-            <h2 class="font-display text-2xl sm:text-4xl font-bold text-brand-maroon">
+            <h2 data-i18n="calcTitle" class="font-display text-2xl sm:text-4xl font-bold text-brand-maroon">
               Request Your Wholesale Quotation
             </h2>
-            <p class="text-xs sm:text-sm text-brand-muted">
+            <p data-i18n="calcDesc" class="text-xs sm:text-sm text-brand-muted">
               Select your cloth material from our stock list to instantly format an official inquiry directly to our store desk on WhatsApp.
             </p>
           </div>
@@ -897,7 +929,7 @@
               
               <!-- Fabric Type with ALL user requested fabrics -->
               <div class="space-y-1 sm:col-span-2">
-                <label class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal">
+                <label data-i18n="calcLabelFabric" class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal">
                   Select Name of Kapda (कपड़ा चुनें) *
                 </label>
                 <select id="calcFabric" class="w-full px-3.5 py-3 bg-white border border-brand-linen rounded-xl text-base sm:text-sm font-medium text-brand-charcoal focus:outline-none focus:ring-2 focus:ring-brand-gold">
@@ -970,7 +1002,7 @@
 
               <!-- Estimated Quantity -->
               <div class="space-y-1">
-                <label class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal">
+                <label data-i18n="calcLabelQty" class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal">
                   Quantity *
                 </label>
                 <select id="calcMeters" class="w-full px-3.5 py-3 bg-white border border-brand-linen rounded-xl text-base sm:text-sm font-medium text-brand-charcoal focus:outline-none focus:ring-2 focus:ring-brand-gold">
@@ -983,7 +1015,7 @@
 
               <!-- Buyer Type -->
               <div class="space-y-1">
-                <label class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal">
+                <label data-i18n="calcLabelBuyer" class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal">
                   You are a...
                 </label>
                 <select id="calcBuyerType" class="w-full px-3.5 py-3 bg-white border border-brand-linen rounded-xl text-base sm:text-sm font-medium text-brand-charcoal focus:outline-none focus:ring-2 focus:ring-brand-gold">
@@ -997,13 +1029,14 @@
 
               <!-- Destination City -->
               <div class="space-y-1 sm:col-span-2">
-                <label class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal">
+                <label data-i18n="calcLabelCity" class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal">
                   Your City &amp; State (for delivery) *
                 </label>
                 <input 
                   type="text" 
                   id="calcCity" 
                   required 
+                  data-i18n-placeholder="calcCityPlaceholder"
                   placeholder="e.g. Lucknow, Delhi, Mumbai, Jaipur, Surat, Kolkata..." 
                   class="w-full px-3.5 py-3 bg-white border border-brand-linen rounded-xl text-base sm:text-sm font-medium text-brand-charcoal focus:outline-none focus:ring-2 focus:ring-brand-gold"
                 />
@@ -1013,12 +1046,13 @@
 
             <!-- Additional Notes -->
             <div class="space-y-1">
-              <label class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal">
+              <label data-i18n="calcLabelNotes" class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal">
                 Specific Shade, Panna, or Than Length Notes (Optional)
               </label>
               <textarea 
                 id="calcNotes" 
                 rows="2" 
+                data-i18n-placeholder="calcNotesPlaceholder"
                 placeholder="Mention specific color preference, panna width (44/48/54/58), or dispatch deadline..." 
                 class="w-full px-3.5 py-3 bg-white border border-brand-linen rounded-xl text-base sm:text-sm font-medium text-brand-charcoal focus:outline-none focus:ring-2 focus:ring-brand-gold"
               ></textarea>
@@ -1028,9 +1062,9 @@
             <div class="pt-1">
               <button type="submit" class="w-full py-4 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl text-xs sm:text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-all">
                 <i data-lucide="message-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                <span>Send WhatsApp Wholesale Inquiry Now</span>
+                <span data-i18n="calcSubmitBtn">Send WhatsApp Wholesale Inquiry Now</span>
               </button>
-              <p class="text-center text-[11px] text-brand-muted mt-2">
+              <p data-i18n="calcSubtext" class="text-center text-[11px] text-brand-muted mt-2">
                 Direct reply from our Chowk desk • Daily Mandi Rates • Prompt Transport Dispatch Across India
               </p>
             </div>
@@ -1048,12 +1082,12 @@
         <div class="text-center max-w-3xl mx-auto mb-10 space-y-2 sm:space-y-3">
           <div class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold text-brand-gold">
             <i data-lucide="shield-check" class="w-4 h-4"></i>
-            <span>The Kripa Fabric Difference</span>
+            <span data-i18n="whyBadge">The Kripa Fabric Difference</span>
           </div>
-          <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon">
+          <h2 data-i18n="whyTitle" class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon">
             Built on Trust, Quality &amp; Chowk Heritage
           </h2>
-          <p class="text-brand-muted text-xs sm:text-base">
+          <p data-i18n="whyDesc" class="text-brand-muted text-xs sm:text-base">
             For more than 34 years, businesses across India have partnered with Kripa Fabric for uncompromised quality, transparent trade, and deep domain knowledge.
           </p>
         </div>
@@ -1064,8 +1098,8 @@
             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-goldPale text-brand-maroon flex items-center justify-center">
               <i data-lucide="coins" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-gold"></i>
             </div>
-            <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">Direct Chowk Wholesale Rates</h3>
-            <p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+            <h3 data-i18n="whyCard1Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">Direct Chowk Wholesale Rates</h3>
+            <p data-i18n="whyCard1Desc" class="text-xs sm:text-sm text-brand-muted leading-relaxed">
               Eliminate middlemen fees. As high-volume stockists in Chowk, we provide direct wholesale prices allowing your boutique or brand to retain strong profit margins.
             </p>
           </div>
@@ -1074,8 +1108,8 @@
             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-goldPale text-brand-maroon flex items-center justify-center">
               <i data-lucide="badge-check" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-gold"></i>
             </div>
-            <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">Guaranteed Fabric Purity</h3>
-            <p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+            <h3 data-i18n="whyCard2Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">Guaranteed Fabric Purity</h3>
+            <p data-i18n="whyCard2Desc" class="text-xs sm:text-sm text-brand-muted leading-relaxed">
               Every yard is inspected for yarn consistency, correct GSM, warp-weft density, and zero polyester adulteration in our pure cotton and pure viscose collections.
             </p>
           </div>
@@ -1084,8 +1118,8 @@
             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-goldPale text-brand-maroon flex items-center justify-center">
               <i data-lucide="clock" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-gold"></i>
             </div>
-            <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">34+ Years Established Legacy</h3>
-            <p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+            <h3 data-i18n="whyCard3Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">34+ Years Established Legacy</h3>
+            <p data-i18n="whyCard3Desc" class="text-xs sm:text-sm text-brand-muted leading-relaxed">
               Founded in 1991, our reputation is forged over three decades of honorable service to generations of master Lucknowi artisans and textile merchants.
             </p>
           </div>
@@ -1094,8 +1128,8 @@
             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-goldPale text-brand-maroon flex items-center justify-center">
               <i data-lucide="truck" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-gold"></i>
             </div>
-            <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">Secure Pan-India Logistics</h3>
-            <p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+            <h3 data-i18n="whyCard4Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">Secure Pan-India Logistics</h3>
+            <p data-i18n="whyCard4Desc" class="text-xs sm:text-sm text-brand-muted leading-relaxed">
               Standardized heavy-duty waterproof bale packing and daily dispatches via trusted road transport or express air couriers right to your doorstep.
             </p>
           </div>
@@ -1104,8 +1138,8 @@
             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-goldPale text-brand-maroon flex items-center justify-center">
               <i data-lucide="palette" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-gold"></i>
             </div>
-            <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">Dye-Ready Batch Consistency</h3>
-            <p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+            <h3 data-i18n="whyCard5Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">Dye-Ready Batch Consistency</h3>
+            <p data-i18n="whyCard5Desc" class="text-xs sm:text-sm text-brand-muted leading-relaxed">
               All white and off-white fabrics are scoured and prepared for dye houses, ensuring consistent shade matching across hundreds of garments.
             </p>
           </div>
@@ -1114,8 +1148,8 @@
             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-goldPale text-brand-maroon flex items-center justify-center">
               <i data-lucide="user-check" class="w-5 h-5 sm:w-6 sm:h-6 text-brand-gold"></i>
             </div>
-            <h3 class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">Personalized Service</h3>
-            <p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+            <h3 data-i18n="whyCard6Title" class="font-display text-lg sm:text-xl font-bold text-brand-charcoal">Personalized Service</h3>
+            <p data-i18n="whyCard6Desc" class="text-xs sm:text-sm text-brand-muted leading-relaxed">
               Speak directly with our store owner Pradeep Ji for personalized fabric recommendations, sample cuts, and tailored trade arrangements.
             </p>
           </div>
@@ -1133,13 +1167,13 @@
         <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-10 space-y-2 sm:space-y-3">
           <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-goldPale border border-brand-gold/40 text-brand-maroon text-[11px] sm:text-xs font-bold uppercase tracking-widest">
             <i data-lucide="clipboard-list" class="w-3.5 h-3.5 text-brand-gold"></i>
-            <span>Chowk Wholesale Price Ledger</span>
+            <span data-i18n="ratesBadge">Chowk Wholesale Price Ledger</span>
           </div>
-          <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon">
+          <h2 data-i18n-html="ratesTitle" class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon">
             STOCK / MAAL RATES <br class="hidden sm:inline" />
             <span class="text-xl sm:text-3xl text-brand-gold font-serif font-normal">(स्टॉक एवं माल रेट्स लिस्ट)</span>
           </h2>
-          <p class="text-brand-muted text-xs sm:text-base">
+          <p data-i18n-html="ratesDesc" class="text-brand-muted text-xs sm:text-base">
             All 48 cloth materials in ready <strong>Than (थॉन), Rolls, and Bales</strong> at direct Chowk wholesale mandi rates. Use search or swipe through categories below.
           </p>
         </div>
@@ -1155,6 +1189,7 @@
               <input 
                 type="text" 
                 id="maalSearch" 
+                data-i18n-placeholder="searchPlaceholder"
                 placeholder="Search any Kapda (e.g. Rasmalai, Blue Cathaya, 60-60, Neta Kurta...)" 
                 class="w-full pl-10 pr-8 py-2.5 bg-white border border-brand-linen rounded-xl text-base sm:text-xs focus:outline-none focus:ring-2 focus:ring-brand-gold text-brand-charcoal shadow-sm"
               />
@@ -1186,7 +1221,7 @@
                 class="hidden md:flex px-3.5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-semibold uppercase tracking-wider items-center gap-1.5 shadow-sm whitespace-nowrap"
               >
                 <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-                <span>PDF Rate Sheet</span>
+                <span data-i18n="pdfRateBtn">PDF Rate Sheet</span>
               </a>
             </div>
 
@@ -1194,25 +1229,25 @@
 
           <!-- Mobile Friendly Horizontal Scrollable Categories (Swipeable) -->
           <div class="flex items-center gap-1.5 overflow-x-auto scrollbar-none py-1 -mx-1 px-1" id="maalFilters">
-            <button class="maal-filter-btn active flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-brand-maroon text-white shadow-sm" data-category="all">
+            <button class="maal-filter-btn active flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-brand-maroon text-white shadow-sm" data-category="all" data-i18n="filterAll">
               All Kapda (सब)
             </button>
-            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="dupatta">
+            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="dupatta" data-i18n="filterDupatta">
               Dupattas (दुपट्टा)
             </button>
-            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="silk">
+            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="silk" data-i18n="filterSilk">
               Silk (सिल्क)
             </button>
-            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="georgette">
+            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="georgette" data-i18n="filterGeorgette">
               Georgette (जॉर्जेट)
             </button>
-            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="cotton">
+            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="cotton" data-i18n="filterCotton">
               Cotton (कॉटन व मलमल)
             </button>
-            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="synthetic">
+            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="synthetic" data-i18n="filterSynthetic">
               Synthetic (सिंथेटिक)
             </button>
-            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="specialty">
+            <button class="maal-filter-btn flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all bg-white text-brand-charcoal hover:bg-brand-linen border border-brand-linen" data-category="specialty" data-i18n="filterSpecialty">
               Specialties (लेडीज/जेंट्स)
             </button>
           </div>
@@ -2290,12 +2325,12 @@
         <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 space-y-2 sm:space-y-3">
           <div class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-bold text-brand-gold">
             <i data-lucide="map-pin" class="w-4 h-4"></i>
-            <span>Visit Us in Chowk</span>
+            <span data-i18n="visitBadge">Visit Us in Chowk</span>
           </div>
-          <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon">
+          <h2 data-i18n="visitTitle" class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-maroon">
             Plan Your Visit to Our Store
           </h2>
-          <p class="text-brand-muted text-xs sm:text-base">
+          <p data-i18n="visitDesc" class="text-brand-muted text-xs sm:text-base">
             Feel the texture and drape in person. We warmly welcome boutique owners, tailors, and fabric lovers to visit our physical showroom.
           </p>
         </div>
@@ -2313,13 +2348,13 @@
                   <i data-lucide="map-pin" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-xs sm:text-sm text-brand-charcoal uppercase tracking-wider">Store Address</h4>
+                  <h4 data-i18n="addressHeading" class="font-bold text-xs sm:text-sm text-brand-charcoal uppercase tracking-wider">Store Address</h4>
                   <p class="text-xs sm:text-sm text-brand-charcoal mt-1 font-medium leading-relaxed" id="storeFullAddress">
                     Shop No.10, Shri Ramkrishna Das Munnulal Dharamshala Market, Chowk, Lucknow, Uttar Pradesh :: 226003
                   </p>
                   <button onclick="copyAddress()" class="mt-2 text-xs font-bold text-brand-maroon hover:text-brand-crimson inline-flex items-center gap-1">
                     <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-                    <span id="copyBtnText">Copy Full Address</span>
+                    <span id="copyBtnText" data-i18n="copyAddressBtn">Copy Full Address</span>
                   </button>
                 </div>
               </div>
@@ -2330,11 +2365,11 @@
                   <i data-lucide="phone" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-xs sm:text-sm text-brand-charcoal uppercase tracking-wider">Phone &amp; WhatsApp</h4>
+                  <h4 data-i18n="phoneHeading" class="font-bold text-xs sm:text-sm text-brand-charcoal uppercase tracking-wider">Phone &amp; WhatsApp</h4>
                   <a href="tel:+919839201666" class="block text-sm sm:text-base font-bold text-brand-maroon hover:underline mt-0.5">
                     +91 9839201666
                   </a>
-                  <p class="text-xs text-brand-muted mt-0.5">Contact Person: Pradeep Ji</p>
+                  <p data-i18n="contactPerson" class="text-xs text-brand-muted mt-0.5">Contact Person: Pradeep Ji</p>
                 </div>
               </div>
 
@@ -2344,7 +2379,7 @@
                   <i data-lucide="mail" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-xs sm:text-sm text-brand-charcoal uppercase tracking-wider">Email Inquiry</h4>
+                  <h4 data-i18n="emailHeading" class="font-bold text-xs sm:text-sm text-brand-charcoal uppercase tracking-wider">Email Inquiry</h4>
                   <a href="mailto:pradeepfab63@gmail.com" class="block text-xs sm:text-sm font-semibold text-brand-maroon hover:underline mt-0.5 truncate">
                     pradeepfab63@gmail.com
                   </a>
@@ -2357,11 +2392,11 @@
                   <i data-lucide="clock" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-xs sm:text-sm text-brand-charcoal uppercase tracking-wider">Operating Hours</h4>
-                  <p class="text-xs sm:text-sm text-brand-charcoal mt-1">
+                  <h4 data-i18n="hoursHeading" class="font-bold text-xs sm:text-sm text-brand-charcoal uppercase tracking-wider">Operating Hours</h4>
+                  <p data-i18n-html="hoursMonSat" class="text-xs sm:text-sm text-brand-charcoal mt-1">
                     <strong>Monday – Saturday:</strong> 11:00 AM – 9:00 PM
                   </p>
-                  <p class="text-xs text-brand-muted mt-0.5">
+                  <p data-i18n-html="hoursSun" class="text-xs text-brand-muted mt-0.5">
                     <strong>Sunday:</strong> Available by advance appointment.
                   </p>
                 </div>
@@ -2373,11 +2408,11 @@
             <div class="pt-4 border-t border-brand-linen flex flex-col sm:flex-row gap-2.5">
               <a href="https://maps.google.com/?q=26.866117,80.908171" target="_blank" rel="noopener" class="flex-1 py-3 px-4 bg-brand-maroon hover:bg-brand-burgundy text-white font-semibold rounded-xl text-xs uppercase tracking-wider shadow flex items-center justify-center gap-2 transition-all">
                 <i data-lucide="navigation" class="w-4 h-4 text-brand-goldLight"></i>
-                <span>Get Directions</span>
+                <span data-i18n="btnDirections">Get Directions</span>
               </a>
               <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20I%20am%20planning%20to%20visit%20your%20Chowk%20store%20today." target="_blank" rel="noopener" class="flex-1 py-3 px-4 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-xl text-xs uppercase tracking-wider shadow flex items-center justify-center gap-2 transition-all">
                 <i data-lucide="message-circle" class="w-4 h-4"></i>
-                <span>Inform Arrival</span>
+                <span data-i18n="btnInformArrival">Inform Arrival</span>
               </a>
             </div>
 
@@ -2396,7 +2431,7 @@
             
             <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-2 rounded-xl border border-brand-gold/30 shadow-md text-left pointer-events-none">
               <span class="text-[9px] font-bold uppercase tracking-wider text-brand-gold">Google Maps</span>
-              <div class="text-[11px] font-bold text-brand-maroon">Kripa Fabric • Chowk, Lucknow</div>
+              <div data-i18n="mapsCardTitle" class="text-[11px] font-bold text-brand-maroon">Kripa Fabric • Chowk, Lucknow</div>
             </div>
           </div>
 
@@ -2420,10 +2455,10 @@
             </div>
             <div>
               <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white block">KRIPA FABRIC</span>
-              <span class="text-[10px] tracking-widest uppercase font-semibold text-brand-gold">Since 1991 • Chowk, Lucknow</span>
+              <span data-i18n="brandSub" class="text-[10px] tracking-widest uppercase font-semibold text-brand-gold">Since 1991 • Chowk, Lucknow</span>
             </div>
           </div>
-          <p class="text-xs text-gray-300 leading-relaxed">
+          <p data-i18n="footerBio" class="text-xs text-gray-300 leading-relaxed">
             Lucknow's premier textile manufacturer and wholesale distributor of cloth materials. Supplying authentic pure cottons, Blue Cathaya georgette, chanderi silks, Rasmalai, Loom Aadhi, and dupattas to boutiques, master artisans, and tailors across India.
           </p>
           <div class="flex items-center gap-3 pt-1">
@@ -2444,7 +2479,7 @@
 
         <!-- Fabric Categories -->
         <div class="lg:col-span-3 space-y-2.5 sm:space-y-3">
-          <h4 class="font-display text-sm font-bold uppercase tracking-wider text-brand-gold">In-Stock Cloth Materials</h4>
+          <h4 data-i18n="footerHeadingMaterials" class="font-display text-sm font-bold uppercase tracking-wider text-brand-gold">In-Stock Cloth Materials</h4>
           <ul class="space-y-1.5 text-xs text-gray-300">
             <li><a href="#stock-rates" class="hover:text-brand-gold transition-colors">Blue Cathaya Pure Georgette</a></li>
             <li><a href="#stock-rates" class="hover:text-brand-gold transition-colors">Rasmalai &amp; 60-60 Pure Cotton</a></li>
@@ -2457,14 +2492,14 @@
 
         <!-- Quick Links -->
         <div class="lg:col-span-2 space-y-2.5 sm:space-y-3">
-          <h4 class="font-display text-sm font-bold uppercase tracking-wider text-brand-gold">Navigation</h4>
+          <h4 data-i18n="footerHeadingNav" class="font-display text-sm font-bold uppercase tracking-wider text-brand-gold">Navigation</h4>
           <ul class="space-y-1.5 text-xs text-gray-300">
-            <li><a href="#stock-rates" class="text-brand-goldLight font-bold hover:text-brand-gold transition-colors">Stock &amp; Maal Rates</a></li>
-            <li><a href="#about" class="hover:text-brand-gold transition-colors">Our 1991 Legacy</a></li>
-            <li><a href="#catalog" class="hover:text-brand-gold transition-colors">Cloth Materials</a></li>
-            <li><a href="#chikankari" class="hover:text-brand-gold transition-colors">Chikankari Guide</a></li>
-            <li><a href="#gallery" class="hover:text-brand-gold transition-colors">Chowk Shop Photos</a></li>
-            <li><a href="#quote-calculator" class="hover:text-brand-gold transition-colors">Bulk Quote Tool</a></li>
+            <li><a href="#stock-rates" data-i18n="navRates" class="text-brand-goldLight font-bold hover:text-brand-gold transition-colors">Stock &amp; Maal Rates</a></li>
+            <li><a href="#catalog" data-i18n="navMaterials" class="hover:text-brand-gold transition-colors">Cloth Materials</a></li>
+            <li><a href="#chikankari" data-i18n="navChikankari" class="hover:text-brand-gold transition-colors">Chikankari Guide</a></li>
+            <li><a href="#gallery" data-i18n="navPhotos" class="hover:text-brand-gold transition-colors">Chowk Shop Photos</a></li>
+            <li><a href="#quote-calculator" data-i18n="navCalculator" class="hover:text-brand-gold transition-colors">Bulk Quote Tool</a></li>
+            <li><a href="#why-us" data-i18n="navWhyUs" class="hover:text-brand-gold transition-colors">Why Choose Us</a></li>
           </ul>
         </div>
 
@@ -2472,7 +2507,7 @@
         <div class="lg:col-span-3 bg-white/5 p-4 sm:p-5 rounded-2xl border border-white/10 space-y-2.5 sm:space-y-3">
           <div class="flex items-center gap-2 text-brand-gold font-bold text-xs uppercase tracking-wider">
             <i data-lucide="award" class="w-4 h-4"></i>
-            <span>Chowk Wholesale Depot</span>
+            <span data-i18n="footerVerifiedDepot">Chowk Wholesale Depot</span>
           </div>
           <p class="text-xs text-gray-300">
             Shop No.10, Shri Ramkrishna Das Munnulal Dharamshala Market, Chowk, Lucknow - 226003
@@ -2482,7 +2517,7 @@
           </div>
           <div class="pt-0.5">
             <a href="https://maps.google.com/?q=26.866117,80.908171" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-xs text-white underline underline-offset-4 hover:text-brand-gold">
-              <span>Open in Google Maps</span>
+              <span data-i18n="footerMapsLink">Open in Google Maps</span>
               <i data-lucide="external-link" class="w-3 h-3"></i>
             </a>
           </div>
@@ -2492,9 +2527,9 @@
 
       <!-- Copyright & Local Attribution -->
       <div class="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400 text-center sm:text-left">
-        <p>&copy; 1991 – <span id="currentYear"></span> Kripa Fabric. All Rights Reserved. Chowk, Lucknow, Uttar Pradesh.</p>
+        <p>&copy; 1991 – <span id="currentYear"></span> <span data-i18n="footerRights">Kripa Fabric. All Rights Reserved. Chowk, Lucknow, Uttar Pradesh.</span></p>
         <p class="flex items-center gap-1.5 justify-center">
-          <span>Wholesale cloth materials supplier</span>
+          <span data-i18n="footerSupplierText">Wholesale cloth materials supplier</span>
           <span class="text-brand-gold">✦</span>
         </p>
       </div>
@@ -2506,25 +2541,25 @@
   <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-brand-linen py-1.5 px-3 shadow-2xl flex items-center justify-around gap-1 pb-[calc(0.4rem+env(safe-area-inset-bottom))]">
     <a href="tel:+919839201666" class="flex flex-col items-center justify-center flex-1 py-1 text-brand-maroon hover:text-brand-crimson transition-colors">
       <i data-lucide="phone" class="w-4 h-4 mb-0.5 text-brand-gold"></i>
-      <span class="text-[10px] font-bold uppercase tracking-tight">Call</span>
+      <span data-i18n="bottomCall" class="text-[10px] font-bold uppercase tracking-tight">Call</span>
     </a>
     <a href="#stock-rates" class="flex flex-col items-center justify-center flex-1 py-1 text-brand-charcoal hover:text-brand-maroon transition-colors">
       <i data-lucide="tag" class="w-4 h-4 mb-0.5 text-brand-maroon"></i>
-      <span class="text-[10px] font-bold uppercase tracking-tight">Maal Rates</span>
+      <span data-i18n="bottomRates" class="text-[10px] font-bold uppercase tracking-tight">Maal Rates</span>
     </a>
     <a href="https://wa.me/919839201666?text=Namaste%20Kripa%20Fabric,%20please%20share%20today's%20wholesale%20maal%20rates." target="_blank" rel="noopener" class="flex flex-col items-center justify-center flex-1 py-1 text-emerald-700 hover:text-emerald-800 transition-colors">
       <div class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-md -mt-5 border-2 border-white">
         <i data-lucide="message-circle" class="w-5 h-5"></i>
       </div>
-      <span class="text-[10px] font-bold uppercase tracking-tight mt-0.5">WhatsApp</span>
+      <span data-i18n="bottomWhatsApp" class="text-[10px] font-bold uppercase tracking-tight mt-0.5">WhatsApp</span>
     </a>
     <a href="#quote-calculator" class="flex flex-col items-center justify-center flex-1 py-1 text-brand-charcoal hover:text-brand-maroon transition-colors">
       <i data-lucide="calculator" class="w-4 h-4 mb-0.5 text-brand-gold"></i>
-      <span class="text-[10px] font-bold uppercase tracking-tight">Quote</span>
+      <span data-i18n="bottomQuote" class="text-[10px] font-bold uppercase tracking-tight">Quote</span>
     </a>
     <a href="https://maps.google.com/?q=26.866117,80.908171" target="_blank" rel="noopener" class="flex flex-col items-center justify-center flex-1 py-1 text-brand-charcoal hover:text-brand-maroon transition-colors">
       <i data-lucide="map-pin" class="w-4 h-4 mb-0.5 text-brand-maroon"></i>
-      <span class="text-[10px] font-bold uppercase tracking-tight">Chowk Map</span>
+      <span data-i18n="bottomMap" class="text-[10px] font-bold uppercase tracking-tight">Chowk Map</span>
     </a>
   </nav>
 
@@ -2532,7 +2567,7 @@
   <div class="fixed bottom-16 lg:bottom-6 right-3 lg:right-6 z-40 flex items-center gap-3">
     <div class="hidden lg:flex bg-white px-3.5 py-2 rounded-full shadow-lg border border-brand-linen text-xs font-semibold text-brand-charcoal animate-subtle-pulse">
       <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2 inline-block"></span>
-      <span>Wholesale Maal Rates • Chat Now</span>
+      <span data-i18n="floatingPrompt">Wholesale Maal Rates • Chat Now</span>
     </div>
     
     <a 
@@ -2633,7 +2668,8 @@
         }
       });
 
-      maalCountBadge.textContent = `${visibleCount} Varieties`;
+      const suffix = (window.translations && window.translations[currentLang]) ? window.translations[currentLang].varietiesSuffix : 'Varieties';
+      maalCountBadge.textContent = `${visibleCount} ${suffix}`;
     }
 
     clearSearchBtn.addEventListener('click', () => {
@@ -2679,149 +2715,7 @@
       document.querySelectorAll('.card-desc, .card-meta').forEach(el => el.classList.add('hidden'));
     });
 
-    // Technical Specs Database (100% Cloth Material Images)
-    const fabricSpecsData = {
-      'mulmul-cotton': {
-        title: 'Pure Mulmul Cotton 60x60 & Rasmalai',
-        category: 'Pure Combed Cotton Material',
-        width: '44 inches / 48 inches panna',
-        gsm: '65 - 75 GSM',
-        composition: '100% Combed Bio-Polished Cotton',
-        dyeability: 'Pre-bleached & Dye-Ready for vat, direct, and reactive pastel dyes',
-        suitableFor: 'Lucknowi Chikankari Kurtis, Gents Kurta Pajama, Dupattas, Summer Sets',
-        care: 'Gentle hand wash / Mild detergent / Shade dry',
-        description: 'Woven with ultra-fine 60s combed cotton yarn. Specially bio-polished for butter-soft hand feel without needle snagging or thread breaks during hand embroidery.',
-        image: './public/fabrics/cotton-mulmul.jpg'
-      },
-      'viscose-georgette': {
-        title: 'Pure Viscose Georgette (Blue Cathaya & Sunpheel)',
-        category: 'High-Twist Cellulose Crepe Material',
-        width: '44 inches (42 inches after crepe wash)',
-        gsm: '60 GSM & 80 GSM options',
-        composition: '100% Viscose Rayon High-Twist Yarn',
-        dyeability: '100% Dyeable. Unrivaled pastel and jewel tone absorption.',
-        suitableFor: 'Anarkalis, Lehengas, Designer Chikankari suits, Sarees, Flared gowns',
-        care: 'Dry clean recommended / Cold gentle wash',
-        description: 'Heavy S & Z twist crepe yarns give this georgette its iconic pebbled texture, fluid bounce, and regal weight. Trusted by bridal designers across Lucknow and Mumbai.',
-        image: './public/fabrics/viscose-georgette.jpg'
-      },
-      'chanderi-silk': {
-        title: 'Pure Chanderi & Silk 40gm/50gm',
-        category: 'Festive Silk-Cotton Material',
-        width: '44 inches panna',
-        gsm: '85 - 95 GSM',
-        composition: 'Silk Warp x Fine Cotton Weft',
-        dyeability: 'Exceptional for rich jewel tones and metallic accents',
-        suitableFor: 'Party wear kurtis, Dupattas with zari borders, Sherwanis, Designer jackets',
-        care: 'Dry clean only',
-        description: 'A magnificent traditional weave carrying a translucent body and shimmering gold sheen. Adds instant regal grandeur to any garment.',
-        image: './public/fabrics/silk-chanderi.jpg'
-      },
-      'kota-doria': {
-        title: 'Kota Doria (Cotton & Silk Khat Weave)',
-        category: 'Checked Cotton / Silk Weave Material',
-        width: '44 inches panna',
-        gsm: '50 - 60 GSM',
-        composition: 'Cotton & Silk Blend Khat',
-        dyeability: 'Vibrant tie-dye, bandhani, and ombré friendly',
-        suitableFor: 'Summer sarees, Light dupattas, Sheer ethnic jackets, Contemporary tunics',
-        care: 'Gentle wash / Light starching for crisp structure',
-        description: 'Famous for its square geometric grid ("khat") pattern created by intertwining silk and cotton yarns. Exceptionally lightweight, airy, and elegant.',
-        image: './public/fabrics/kota-doria.jpg'
-      },
-      'pure-chiffon': {
-        title: 'Pure Chiffon & Chamundi Shiffon (CS 22/55)',
-        category: 'Ultra-Fine Plain Sheer Cloth Material',
-        width: '44 inches panna',
-        gsm: '40 - 50 GSM',
-        composition: '100% Pure Filaments / Cupro Bemberg',
-        dyeability: 'Exceptional for solid dyeing, ombre dip-dye, and vibrant pastels',
-        suitableFor: 'Plain bridal dupattas, Layered sheer gowns, Sarees, Flared sleeves',
-        care: 'Dry clean recommended',
-        description: 'Featherlight transparency with a liquid flowing drape. Plain solid dyeable sheer cloth trusted by master Chikankari artisans and dupatta processors.',
-        image: './public/fabrics/chiffon-dupatta.jpg'
-      },
-      'cambric-cotton': {
-        title: '60-60 Cambric & Glaze Cotton (Plain Dyeable)',
-        category: 'Plain Wholesale Cloth Material',
-        width: '44 inches / 58 inches panna',
-        gsm: '85 - 110 GSM',
-        composition: '100% Pure Combed Cotton Weave',
-        dyeability: 'Pre-bleached / Kora ready for solid dyeing, printing, and hand embroidery',
-        suitableFor: 'Kurtas, shirts, lining, Chikankari bases, co-ord sets',
-        care: 'Machine wash gentle / Standard cotton cycle',
-        description: 'Premium combed 60-60 count plain cotton and glaze cotton available in full than bolts and factory bales. Unmatched softness, breathability, and weave consistency.',
-        image: './public/fabrics/cambric-cotton.jpg'
-      }
-    };
-
     const fabricModal = document.getElementById('fabricModal');
-    const modalContent = document.getElementById('modalContent');
-
-    function openFabricModal(fabricKey) {
-      const data = fabricSpecsData[fabricKey];
-      if (!data) return;
-
-      modalContent.innerHTML = `
-        <div class="flex items-start justify-between border-b border-brand-linen pb-3">
-          <div>
-            <span class="text-[10px] font-bold uppercase tracking-widest text-brand-gold">${data.category}</span>
-            <h3 class="font-display text-xl sm:text-2xl font-bold text-brand-maroon mt-0.5">${data.title}</h3>
-          </div>
-          <button onclick="closeFabricModal()" class="text-brand-muted hover:text-brand-charcoal p-1">
-            <i data-lucide="x" class="w-6 h-6"></i>
-          </button>
-        </div>
-
-        <div class="rounded-xl overflow-hidden max-h-40 sm:max-h-48 border border-brand-linen">
-          <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover" />
-        </div>
-
-        <div class="grid grid-cols-2 gap-2 text-[11px] sm:text-xs">
-          <div class="bg-brand-cream p-2.5 rounded-xl border border-brand-linen">
-            <span class="font-bold text-brand-charcoal block">Panna (Width):</span>
-            <span class="text-brand-muted">${data.width}</span>
-          </div>
-          <div class="bg-brand-cream p-2.5 rounded-xl border border-brand-linen">
-            <span class="font-bold text-brand-charcoal block">Weight (GSM):</span>
-            <span class="text-brand-muted">${data.gsm}</span>
-          </div>
-          <div class="bg-brand-cream p-2.5 rounded-xl border border-brand-linen">
-            <span class="font-bold text-brand-charcoal block">Composition:</span>
-            <span class="text-brand-muted">${data.composition}</span>
-          </div>
-          <div class="bg-brand-cream p-2.5 rounded-xl border border-brand-linen">
-            <span class="font-bold text-brand-charcoal block">Dye Capability:</span>
-            <span class="text-brand-muted">${data.dyeability}</span>
-          </div>
-        </div>
-
-        <div class="space-y-2.5 text-xs">
-          <div>
-            <h4 class="font-bold text-brand-charcoal uppercase tracking-wider text-[11px]">Ideal Applications</h4>
-            <p class="text-brand-muted mt-0.5">${data.suitableFor}</p>
-          </div>
-          <div>
-            <h4 class="font-bold text-brand-charcoal uppercase tracking-wider text-[11px]">Weave Notes</h4>
-            <p class="text-brand-muted mt-0.5 leading-relaxed">${data.description}</p>
-          </div>
-        </div>
-
-        <div class="pt-3 border-t border-brand-linen flex flex-col sm:flex-row gap-2">
-          <a href="https://wa.me/919839201666?text=Hi%20Kripa%20Fabric,%20I%20am%20inquiring%20about%20${encodeURIComponent(data.title)}.%20Please%20provide%20wholesale%20rates%20and%20swatch%20availability." target="_blank" rel="noopener" class="flex-1 py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow">
-            <i data-lucide="message-circle" class="w-4 h-4"></i>
-            <span>Order Swatches on WhatsApp</span>
-          </a>
-          <button onclick="closeFabricModal()" class="py-2.5 sm:py-3 px-4 border border-brand-linen rounded-xl text-xs font-semibold text-brand-charcoal hover:bg-brand-linen">
-            Close
-          </button>
-        </div>
-      `;
-
-      lucide.createIcons();
-      fabricModal.classList.remove('hidden');
-      fabricModal.classList.add('flex');
-    }
 
     function closeFabricModal() {
       fabricModal.classList.add('hidden');
@@ -2850,28 +2744,18 @@
       lightboxModal.classList.remove('flex');
     }
 
-    // WhatsApp Quote Generator with all fabrics
-    function sendWhatsAppQuote() {
-      const fabric = document.getElementById('calcFabric').value;
-      const meters = document.getElementById('calcMeters').value;
-      const buyerType = document.getElementById('calcBuyerType').value;
-      const city = document.getElementById('calcCity').value.trim();
-      const notes = document.getElementById('calcNotes').value.trim();
-
-      const message = `Hello Kripa Fabric (Chowk, Lucknow),%0A%0AI would like to request a wholesale quotation from your Stock Rate List:%0A• Name of Kapda: ${encodeURIComponent(fabric)}%0A• Quantity: ${encodeURIComponent(meters)}%0A• Buyer Profile: ${encodeURIComponent(buyerType)}%0A• Destination City: ${encodeURIComponent(city)}${notes ? '%0A• Notes/Panna: ' + encodeURIComponent(notes) : ''}%0A%0APlease share your current per-meter / than wholesale rate, roll packaging, and transport estimate. Thank you!`;
-
-      window.open(`https://wa.me/919839201666?text=${message}`, '_blank');
-    }
-
     // Copy Address with Toast Notification
     function copyAddress() {
       const addressText = document.getElementById('storeFullAddress').innerText;
       navigator.clipboard.writeText(addressText).then(() => {
-        showToast('Address copied to clipboard!');
+        const msg = (window.translations && window.translations[currentLang]) ? window.translations[currentLang].toastAddressCopied : 'Address copied to clipboard!';
+        const copiedTxt = (window.translations && window.translations[currentLang]) ? window.translations[currentLang].copiedAddressText : 'Copied!';
+        showToast(msg);
         const copyBtnText = document.getElementById('copyBtnText');
-        copyBtnText.textContent = 'Copied!';
+        copyBtnText.textContent = copiedTxt;
         setTimeout(() => {
-          copyBtnText.textContent = 'Copy Full Address';
+          const revertTxt = (window.translations && window.translations[currentLang]) ? window.translations[currentLang].copyAddressBtn : 'Copy Full Address';
+          copyBtnText.textContent = revertTxt;
         }, 3000);
       }).catch(err => {
         showToast('Address: Shop No. 10, Chowk, Lucknow');
@@ -2890,5 +2774,8 @@
       }, 3500);
     }
   </script>
+
+  <!-- Bilingual Translations Engine -->
+  <script src="./translations.js"></script>
 </body>
 </html>
